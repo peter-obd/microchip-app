@@ -1,0 +1,38 @@
+
+
+  <form action="" class="columns is-mobile"  style="margin-top: 8%;" [formGroup]="micronumb1"  >
+      <div class="column is-half is-offset-one-quarter">
+        <div class="field" >
+            <p class="control has-icons-left has-icons-right">
+              <div >
+                <input class="input" type="number" placeholder="Microchip Number" width="500" height="auto" formControlName="MicrochipNumber">
+                <div *ngIf="!micronumb1.get('MicrochipNumber')!.valid && micronumb1.get('MicrochipNumber')!.touched" style="color: red;" >!!Enter the Microchip Number please!!</div>
+             
+              </div>
+              
+             
+    
+           
+           
+          </div>
+        
+         <div  class="column is-half is-offset-one-quarter">
+            <div  class="has-text-centered">
+                <button  [disabled]="!micronumb1.get('MicrochipNumber')?.value" class="button is-info is-light" type="submit" (click)="onSelect()">Submit</button>
+                
+                  
+            </div>
+
+         </div>
+         <div class="has-text-centered">
+            <a href="" >forgot password</a>
+         </div>
+         <div class="has-text-centered" style="margin-top: 4%;">
+          <p>Don't have an account? <a routerLink='/newAcc' >Create New Account</a></p>
+         </div>
+       
+      </div>
+
+     
+    
+  </form>
