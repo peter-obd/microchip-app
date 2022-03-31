@@ -1,8 +1,13 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({providedIn : 'root'})
 export class NewPet {
 
-petName = '';
-microchipNumber = 0;
+name = '';
+microchip = 0;
 password = '';
+dogsParents = "";
+phoneNumber = 0;
 
 
 }

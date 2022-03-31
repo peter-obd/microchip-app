@@ -11,7 +11,7 @@ import { MyService } from '../myService';
 export class NewAccComponent implements OnInit {
 
  
-
+  ifError?: string;
   constructor(private lzalem3alService : MyService, private ref: ChangeDetectorRef ) { }
 
   ngOnInit(): void {
@@ -19,9 +19,11 @@ export class NewAccComponent implements OnInit {
 
   micronumb3 = new FormGroup({
 
-    "petname" : new FormControl(null, Validators.required),
-    "NewMicrochipNumber" : new FormControl(null, Validators.required),
-    "Password2": new FormControl(null, Validators.required),
+    "name" : new FormControl(null, Validators.required),
+    "microchip" : new FormControl(null, Validators.required),
+    "dogsParents": new FormControl(null, Validators.required),
+    "phoneNumber": new FormControl(null, Validators.required),
+    "password": new FormControl(null, Validators.required),
 
 
   })
@@ -29,18 +31,35 @@ export class NewAccComponent implements OnInit {
   
 
    onSubmit() {
-
+    this.ifError = undefined
      var newpet1 = new NewPet()
-     newpet1.petName = this.micronumb3.get('petname')?.value
-     newpet1.microchipNumber = this.micronumb3.get('NewMicrochipNumber')?.value
-     newpet1.password = this.micronumb3.get('Password2')?.value
-     this.lzalem3alService.array.push(newpet1)
+     newpet1.name = this.micronumb3?.get('name')?.value
+     newpet1.microchip = this.micronumb3?.get('microchip')?.value
+     newpet1.dogsParents = this.micronumb3?.get('dogsParents')?.value
+     newpet1.phoneNumber = this.micronumb3?.get('phoneNumber')?.value
+     newpet1.password = this.micronumb3?.get('password')?.value
+
+    //  this.lzalem3alService.array.push(newpet1)
+    this.lzalem3alService.addNewPet(newpet1).subscribe(
+      (res : any)=>{
+        this.micronumb3.reset();
+        console.log(res)},
+      (err)=>{
+        this.ifError = err.error.message
+      }
+    )
      
-     console.log(this.lzalem3alService.array)
-     this.micronumb3.reset();
+    //  console.log(this.lzalem3alService.array)
+    
 
     
   }
+
+  onChange(){
+    this.ifError= undefined
+  }
+
+  
 
   // clearForm(){
   //   this.micronumb3.get('petname')?.value == ''

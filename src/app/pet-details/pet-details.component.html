@@ -23,11 +23,17 @@
 
 
 <div *ngIf="!status">
-<h1 class="has-text-centered" style="color: rgb(4, 4, 56); font-size: large; margin-top: 12%;">
-   {{microshipnbr}} 
+<h1 class="has-text-centered" class="border border-secondary" style="color: rgb(4, 4, 56); font-size: large; margin-top: 12%; border: 20px;border-color:rgb(4, 4, 56) ;">
+  Microchip Number : {{microchip}}
 </h1>
-<h1  class="has-text-centered" style="color: rgb(4, 4, 56); font-size: large; margin-top: 3%;">
-    {{petname}}
+<h1  class="has-text-centered" class="border border-primary" style="color: rgb(4, 4, 56); font-size: large; margin-top: 3%;border: 20px; border-color: blue;">
+   Pet's Name : {{name}}
+</h1>
+<h1  class="has-text-centered" class="border border-secondary" style="color: rgb(4, 4, 56); font-size: large; margin-top: 3%;border: 20px;border-color: lightblue ">
+ Dog's Parents Name : {{dogsParents}}
+</h1>
+<h1  class="has-text-centered" class="border border-primary"  style="color: rgb(4, 4, 56); font-size: large; margin-top: 3%;border: 20px; border-color: darkblue">
+ Phone number : {{phoneNumber}}
 </h1>
 </div>
 
@@ -36,6 +42,15 @@
   Pet Not Found
 </div>
 
-<div>
-  <app-redirect style="margin-top: 4%;"></app-redirect>
+<div class="container">
+  <app-redirect></app-redirect>
+  <button    class="button is-info is-light" style="margin-left: 2%;" (click)="openDialog()" >Edit</button>
+ 
 </div>
+
+<!-- <div  class="column is-half is-offset-one-quarter"> -->
+  <!-- <div class="has-text-centered" style="margin-top: 4%; margin-left: 70%;" >
+    <button   class="button is-info is-light" >Edit</button>
+    
+    [disabled]="!micronumb1.get('MicrochipNumber')?.value" 
+</div> -->

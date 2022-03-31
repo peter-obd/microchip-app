@@ -19,14 +19,18 @@ export class FormComponent implements OnInit {
   
   micronumb1 = new FormGroup({
 
-    'MicrochipNumber' : new FormControl(null, Validators.required)
+    'microchip' : new FormControl(null, Validators.required)
 
 
   })
 
   onSelect(){
 
-    this.router.navigate(['/details', this.micronumb1.get('MicrochipNumber')?.value])
+    this.router.navigate(['/details',this.micronumb1.get('microchip')?.value
+      
+    ])
 
 
   }}
+
+  // this.micronumb1.get('MicrochipNumber')?.value

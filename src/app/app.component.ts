@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   
   navigatetocomponentone(){
     this.route.navigate(['home'])
+    
   }
 
   

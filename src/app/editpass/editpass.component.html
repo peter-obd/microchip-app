@@ -19,38 +19,35 @@
       </section>
       <hr class="navbar-divider">
 </div>
-<form  class="columns is-mobile"  [formGroup]="micronumb3" >
+<form  class="columns is-mobile"  [formGroup]="micronumb1" >
  
-  
   <div class="column is-half is-offset-one-quarter">
     <div class="field" >
         <p >
-          <input  class="input" type="text" placeholder="Pet Name" width="500" height="auto"  formControlName="name" style="margin-top: 12%;">
-          <div *ngIf="!micronumb3.get('name')!.valid && micronumb3.get('name')!.touched" style="color: red;" >!!Enter the Pet Nmae please!!</div>
+          <input class="input" type="text" placeholder="Pet Name" width="500" height="auto"  formControlName="petname" style="margin-top: 12%;">
+          <div *ngIf="!micronumb1.get('petname')!.valid && micronumb1.get('petname')!.touched" style="color: red;" >!!Enter the Pet Name please!!</div>
            
         </div>
-        <!-- ng-change="onChange()" -->
-        <!-- *ngChange="onChange()"  -->
+
       <div class="field">
         <p>
-        <input  class="input is-link" type="number" placeholder="Microchip number" style="margin-top: 3%;" formControlName="microchip">
-        <div *ngIf="!micronumb3.get('microchip')!.valid && micronumb3.get('microchip')!.touched" style="color: red;" >!!Enter the Microchip Number please!!</div>
-        <div class="err" *ngIf="ifError">{{ifError}}</div>
+        <input class="input is-link" type="number"  style="margin-top: 3%;" formControlName="microchip">
+        <div *ngIf="!micronumb1.get('microchip')!.valid && micronumb1.get('microchip')!.touched" style="color: red;" >!!Enter the Microchip Number please!!</div>
       </div>
       <div class="field">
         <p>
         <input class="input is-info" type="password" placeholder="Password" style="margin-top: 3%;" formControlName="password">
-        <div *ngIf="!micronumb3.get('password')!.valid && micronumb3.get('password')!.touched" style="color: red;" >!!Enter the Microchip Number please!!</div>
+        <div *ngIf="!micronumb1.get('password')!.valid && micronumb1.get('password')!.touched" style="color: red;" >!!Enter the password please!!</div>
     </div>
     <div class="field">
       <p>
-      <input class="input is-info" type="text" placeholder="Enter Parents Name" style="margin-top: 3%;" formControlName="dogsParents">
-      <div *ngIf="!micronumb3.get('dogsParents')!.valid && micronumb3.get('dogsParents')!.touched" style="color: red;" >!!Enter the dog's parents name  please!!</div>
+      <input class="input is-info" type="text" placeholder="Enter Parents Name" style="margin-top: 3%;" formControlName="parentsname">
+      <div *ngIf="!micronumb1.get('parentsname')!.valid && micronumb1.get('parentsname')!.touched" style="color: red;" >!!Enter the dog's parents name  please!!</div>
   </div>
   <div class="field">
     <p>
-    <input class="input is-info" type="text" placeholder="Enter Phone Number (start by ur country's phonecode for example '961')" style="margin-top: 3%;" formControlName="phoneNumber" mask="(+000) 00-000000">
-    <div *ngIf="!micronumb3.get('phoneNumber')!.valid && micronumb3.get('phoneNumber')!.touched" style="color: red;" >!!Enter the phone number correctly please!!</div>
+    <input class="input is-info" type="text" placeholder="Enter Phone Number (start by ur country's phonecode for example '961')" style="margin-top: 3%;" formControlName="phonenumber" mask="(+000) 00-000000">
+    <div *ngIf="!micronumb1.get('phonenumber')!.valid && micronumb1.get('phonenumber')!.touched" style="color: red;" >!!Enter the phone number correctly please!!</div>
 </div>
       </div>
         
@@ -60,7 +57,9 @@
  
 </form>
 <div  class="has-text-centered" style="margin-top: 3%;" >
-    <button class="button is-info is-light" type="submit" (click)="onSubmit()">Submit</button>
+    
     <button class="button is-info is-light" type="submit" routerLink='/home' style="margin-left: 2%;">Done</button>
+    <button class="button is-info is-light" type="submit" (click)="updatePost()" style="margin-left: 2%;">Edit</button>
 </div>
 
+<!-- <button class="button is-info is-light" type="submit" (click)="onSubmit()">Submit</button> -->
